@@ -1,0 +1,385 @@
+<?php
+/*
+Plugin Name: Easy Adsense Injection
+Version: 2.0
+Plugin URI: http://quickwebresources.com
+Author: Deepanker
+Author URI: http://quickwebresources.com
+Description: A simple Wordpress plugin to inject Google Adsense Ads into posts, pages, sidebars or any other part of theme. Add alternate ads to beat adblocker.
+License: GPLv3
+*/
+
+/*
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 3
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+$easy_ad_injection_version = 20;
+
+
+function adscript1() {
+$ad_value_1_alt = get_option( 'easy_ad_code_1_alt' );
+if($ad_value_1_alt!='')
+{
+$ad_value_1_alt = html_entity_decode( $ad_value_1_alt, ENT_COMPAT );
+?>
+<script type="text/javascript">
+var sidead= '<?php echo "$ad_value_1_alt"; ?>';
+
+  if ( undefined !== window.jQuery ) {
+
+jQuery(function ($) {
+	if ($(".put_wp_ad_1").height() === 0) {
+		$(".put_wp_ad_1").html(sidead);
+	}
+});
+
+  }
+</script>
+<?php
+}
+}
+
+add_action( 'wp_footer', 'adscript1', 1 );
+
+function adscript2() {
+$ad_value_2_alt = get_option( 'easy_ad_code_2_alt' );
+if($ad_value_2_alt!='')
+{
+$ad_value_2_alt = html_entity_decode( $ad_value_2_alt, ENT_COMPAT );
+?>
+<script type="text/javascript">
+var sidead2= '<?php echo "$ad_value_2_alt"; ?>';
+
+  if ( undefined !== window.jQuery ) {
+
+jQuery(function ($) {
+	if ($(".put_wp_ad_2").height() === 0) {
+		$(".put_wp_ad_2").html(sidead2);
+	}
+});
+
+  }
+</script>
+<?php
+}
+}
+
+add_action( 'wp_footer', 'adscript2', 1 );
+
+function adscript3() {
+$ad_value_3_alt = get_option( 'easy_ad_code_3_alt' );
+if($ad_value_3_alt!='')
+{
+$ad_value_3_alt = html_entity_decode( $ad_value_3_alt, ENT_COMPAT );
+?>
+<script type="text/javascript">
+var sidead3= '<?php echo "$ad_value_3_alt"; ?>';
+
+  if ( undefined !== window.jQuery ) {
+
+jQuery(function ($) {
+	if ($(".put_wp_ad_3").height() === 0) {
+		$(".put_wp_ad_3").html(sidead3);
+	}
+});
+
+  }
+</script>
+<?php
+}
+}
+
+add_action( 'wp_footer', 'adscript3', 1 );
+
+function adscript4() {
+$ad_value_4_alt = get_option( 'easy_ad_code_4_alt' );
+if($ad_value_4_alt!='')
+{
+$ad_value_4_alt = html_entity_decode( $ad_value_4_alt, ENT_COMPAT );
+?>
+<script type="text/javascript">
+var sidead4= '<?php echo "$ad_value_4_alt"; ?>';
+
+  if ( undefined !== window.jQuery ) {
+
+jQuery(function ($) {
+	if ($(".put_wp_ad_4").height() === 0) {
+		$(".put_wp_ad_4").html(sidead4);
+	}
+});
+
+  }
+</script>
+<?php
+}
+}
+
+add_action( 'wp_footer', 'adscript4', 1 );
+
+function adscript5() {
+$ad_value_5_alt = get_option( 'easy_ad_code_5_alt' );
+if($ad_value_5_alt!='')
+{
+$ad_value_5_alt = html_entity_decode( $ad_value_5_alt, ENT_COMPAT );
+?>
+<script type="text/javascript">
+var sidead5= '<?php echo "$ad_value_5_alt"; ?>';
+
+  if ( undefined !== window.jQuery ) {
+
+jQuery(function ($) {
+	if ($(".put_wp_ad_5").height() === 0) {
+		$(".put_wp_ad_5").html(sidead5);
+	}
+});
+
+  }
+</script>
+<?php
+}
+}
+
+add_action( 'wp_footer', 'adscript5', 1 );
+
+function put_wp_ad_1() {
+	$ad_value_1 = get_option( 'easy_ad_code_1' );
+	$ad_value_1 = "<div class='put_wp_ad_1'>".html_entity_decode( $ad_value_1, ENT_COMPAT )."</div>";
+
+	if ( !empty( $ad_value_1 ) ) {
+		$output .= " $ad_value_1";
+	}
+	return $output;
+}
+
+add_shortcode( 'easy_ad_inject_1', 'put_wp_ad_1' );
+
+
+function put_wp_ad_2() {
+	$ad_value_2 = get_option( 'easy_ad_code_2' );
+	$ad_value_2 = "<div class='put_wp_ad_2'>".html_entity_decode( $ad_value_2, ENT_COMPAT )."</div>";
+
+	if ( !empty( $ad_value_2 ) ) {
+		$output .= " $ad_value_2";
+	}
+	return $output;
+}
+
+add_shortcode( 'easy_ad_inject_2', 'put_wp_ad_2' );
+
+function put_wp_ad_3() {
+	$ad_value_3 = get_option( 'easy_ad_code_3' );
+	$ad_value_3 = "<div class='put_wp_ad_3'>".html_entity_decode( $ad_value_3, ENT_COMPAT )."</div>";
+
+	if ( !empty( $ad_value_3 ) ) {
+		$output .= " $ad_value_3";
+	}
+	return $output;
+}
+
+add_shortcode( 'easy_ad_inject_3', 'put_wp_ad_3' );
+
+function put_wp_ad_4() {
+	$ad_value_4 = get_option( 'easy_ad_code_4' );
+	$ad_value_4 = "<div class='put_wp_ad_4'>".html_entity_decode( $ad_value_4, ENT_COMPAT )."</div>";
+
+	if ( !empty( $ad_value_4 ) ) {
+		$output .= " $ad_value_4";
+	}
+	return $output;
+}
+
+add_shortcode( 'easy_ad_inject_4', 'put_wp_ad_4' );
+
+function put_wp_ad_5() {
+	$ad_value_5 = get_option( 'easy_ad_code_5' );
+	$ad_value_5 = "<div class='put_wp_ad_5'>".html_entity_decode( $ad_value_5, ENT_COMPAT )."</div>";
+
+	if ( !empty( $ad_value_5 ) ) {
+		$output .= " $ad_value_5";
+	}
+	return $output;
+}
+
+add_shortcode( 'easy_ad_inject_5', 'put_wp_ad_5' );
+
+
+
+function easy_ad_process( $content ) {
+	if ( strpos( $content, "<!-- easy_ad_inject_1 -->" ) !== FALSE ) {
+		$content = preg_replace( '/<p>\s*<!--(.*)-->\s*<\/p>/i', "<!--$1-->", $content );
+		$content = str_replace( '<!-- easy_ad_inject_1 -->', put_wp_ad_1(), $content );
+	}
+	if ( strpos( $content, "<!-- easy_ad_inject_2 -->" ) !== FALSE ) {
+		$content = preg_replace( '/<p>\s*<!--(.*)-->\s*<\/p>/i', "<!--$1-->", $content );
+		$content = str_replace( '<!-- easy_ad_inject_2 -->', put_wp_ad_2(), $content );
+	}
+	if ( strpos( $content, "<!-- easy_ad_inject_3 -->" ) !== FALSE ) {
+		$content = preg_replace( '/<p>\s*<!--(.*)-->\s*<\/p>/i', "<!--$1-->", $content );
+		$content = str_replace( '<!-- easy_ad_injeect_3 -->', put_wp_ad_3(), $content );
+	}
+	if ( strpos( $content, "<!-- easy_ad_inject_4 -->" ) !== FALSE ) {
+		$content = preg_replace( '/<p>\s*<!--(.*)-->\s*<\/p>/i', "<!--$1-->", $content );
+		$content = str_replace( '<!-- easy_ad_inject_4 -->', put_wp_ad_4(), $content );
+	}
+	if ( strpos( $content, "<!-- easy_ad_inject_5 -->" ) !== FALSE ) {
+		$content = preg_replace( '/<p>\s*<!--(.*)-->\s*<\/p>/i', "<!--$1-->", $content );
+		$content = str_replace( '<!-- easy_ad_inject_5 -->', put_wp_ad_5(), $content );
+	}
+	return $content;
+}
+
+add_filter( 'the_content', 'easy_ad_process' );
+
+
+function ad_camp_add_option_page() {
+	if ( function_exists( 'add_options_page' ) ) {
+		add_options_page( 'Easy Adsense Injection', 'Easy Adsense injection ', 8, __FILE__, 'ad_insertion_options_page' );
+	}
+}
+
+function ad_insertion_options_page() {
+
+	global $wp_simple_ad_insert_version;
+
+	if ( isset( $_POST['info_update'] ) ) {
+		echo '<div id="message" class="updated fade"><p><strong>';
+
+		$tmpCode1 = htmlentities( stripslashes( $_POST['ad_1_code'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_1', $tmpCode1 );
+                
+                $tmpCode11 = htmlentities( stripslashes( $_POST['ad_1_code_alt'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_1_alt', $tmpCode11 );
+
+		$tmpCode2 = htmlentities( stripslashes( $_POST['ad_2_code'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_2', $tmpCode2 );
+                
+                $tmpCode12 = htmlentities( stripslashes( $_POST['ad_2_code_alt'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_2_alt', $tmpCode12 );
+
+		$tmpCode3 = htmlentities( stripslashes( $_POST['ad_3_code'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_3', $tmpCode3 );
+                
+                $tmpCode13 = htmlentities( stripslashes( $_POST['ad_3_code_alt'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_3_alt', $tmpCode13 );
+
+		$tmpCode4 = htmlentities( stripslashes( $_POST['ad_4_code'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_4', $tmpCode4 );
+                
+                $tmpCode14 = htmlentities( stripslashes( $_POST['ad_4_code_alt'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_4_alt', $tmpCode14 );
+		
+		$tmpCode5 = htmlentities( stripslashes( $_POST['ad_5_code'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_5', $tmpCode5 );
+                
+                $tmpCode15 = htmlentities( stripslashes( $_POST['ad_5_code_alt'] ) , ENT_COMPAT );
+		update_option( 'easy_ad_code_5_alt', $tmpCode15 );
+
+		echo 'Options Updated!';
+		echo '</strong></p></div>';
+	}
+
+?>
+
+	<div class="wrap">
+		<h2>Easy Adsense Injection Options</h2>
+
+		<p>Use Easy Adsense Injection plugin to quickly and easily inject Google Adsense ads to your posts, pages, sidebar or other part of theme.</p>
+
+<p><strong>Update:</strong> As a part of new update, I am including the ability to add ads for the users who have adblock enabled in their browser. You can now see a text area for alternate ad. Add affiliate banner there to show when adblocker blocks your original ad. Be sure to include the banner uploaded on your server. If you use banner originating from other website, adblock may also block it.</p>
+
+		<br>
+
+        <h3><a href="http://quickwebresources.com">Read More WordPress development and web design </a></h3>  <br />
+
+	    <form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+	    <input type="hidden" name="info_update" id="info_update" value="true" />
+
+	    <fieldset class="options">
+	    <table width="100%" border="0" cellspacing="0" cellpadding="6">
+
+	    <tr valign="top"><td width="35%" align="left">
+	    <strong>Ad Code 1:</strong>
+	    <br>Copy and paste your adsense or other advertisement code here:.
+	    <br>To display this ad use the shortcode in post: [easy_ad_inject_1]
+	    <br> or add put_wp_ad_1(); function in theme
+	    </td><td align="left">
+	    <textarea name="ad_1_code" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_1' ); ?></textarea> <br /> Put Alternate ad below <br />
+            <textarea name="ad_1_code_alt" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_1_alt' ); ?></textarea>
+	    </td></tr>
+<tr valign="top"><td colspan="2"><hr /></td></tr>
+	    <tr valign="top"><td width="35%" align="left">
+	    <strong>Ad Code 2:</strong>
+	    <br>Copy and paste your adsense or other advertisement code here:.
+	    <br>To display this ad use the shortcode in post: [easy_ad_inject_2]
+	    <br> or add echo put_wp_ad_2(); function in theme
+	    </td><td align="left">
+	    <textarea name="ad_2_code" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_2' ); ?></textarea> <br /> Put Alternate ad below <br />
+            <textarea name="ad_2_code_alt" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_2_alt' ); ?></textarea>
+	    </td>
+	    </tr>
+
+<tr valign="top"><td colspan="2"><hr /></td></tr>
+	    <tr valign="top"><td width="35%" align="left">
+	    <strong>Ad Code 3:</strong>
+	    <br>Copy and paste your adsense or other advertisement code here:.
+	    <br>To display this ad use the shortcode in post: [easy_ad_inject_3]
+	    <br> or add put_wp_ad_3(); function in theme
+	    </td><td align="left">
+	    <textarea name="ad_3_code" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_3' ); ?></textarea> <br /> Put Alternate ad below <br />
+	    <textarea name="ad_3_code_alt" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_3_alt' ); ?></textarea>
+	    </td></tr>
+
+<tr valign="top"><td colspan="2"><hr /></td></tr>
+	    <tr valign="top"><td width="35%" align="left">
+	    <strong>Ad Code 4:</strong>
+	    <br>Copy and paste your adsense or other advertisement code here:.
+	    <br>To display this ad use the shortcode in post: [easy_ad_inject_4]
+	    <br> or add put_wp_ad_4(); function in theme
+	    </td><td align="left">
+	    <textarea name="ad_4_code" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_4' ); ?></textarea> <br /> Put Alternate ad below <br />
+	    <textarea name="ad_4_code_alt" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_4_alt' ); ?></textarea>
+	    </td></tr>
+
+<tr valign="top"><td colspan="2"><hr /></td></tr>
+            <tr valign="top"><td width="35%" align="left">
+	    <strong>Ad Code 5:</strong>
+	    <br>Copy and paste your adsense or other advertisement code here:.
+	    <br>To display this ad use the shortcode in post: [easy_ad_inject_5]
+	    <br> or add  put_wp_ad_5();  function in theme
+	    </td><td align="left">
+	    <textarea name="ad_5_code" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_5' ); ?></textarea> <br /> Put Alternate ad below <br />
+	    <textarea name="ad_5_code_alt" rows="6" cols="50"><?php echo get_option( 'easy_ad_code_5_alt' ); ?></textarea>
+	    </td></tr>
+	    </table>
+	    </fieldset>
+
+	    <div class="submit">
+	        <input type="submit" name="info_update" value="<?php _e( 'Save Advertisement Code' ); ?> &raquo;" />
+	    </div>
+	    
+	    </form>
+	</div>
+<?php
+}
+
+
+
+add_action( 'admin_menu', 'ad_camp_add_option_page' );
+
+add_filter('the_content', 'do_shortcode');
+if (!is_admin())
+{add_filter('widget_text', 'do_shortcode');}
+add_filter('the_excerpt', 'do_shortcode');
+?>

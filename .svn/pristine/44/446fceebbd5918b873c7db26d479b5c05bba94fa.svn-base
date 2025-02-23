@@ -1,0 +1,51 @@
+=== Easy Adsense Injection Plugin ===
+
+Contributors: deepanker70
+Donate link: http://quickwebresources.com
+Tags: Google Adsense, WordPress Plugin, Ads manager, Ads injection, ad blocker, bypass ad blocker
+Requires at least: 3.0
+Tested up to: 4.5.2
+Stable tag: 2.0
+
+Wordpress plugin to easily insert Google Adsense to your WordPress posts, pages, footer and sidebar. You can also set alternate ads for ad blocker.
+
+== Description ==
+
+This WordPress plugin allows users to inject Google adsense in a wordpress post or in any part of WordPress theme quickly. You only need to add adsense code in the pugin settings and use shortcode or functions to add the ads in WordPress. You can also use this plugin to add any kind of ads any where in the WordPress based websites.
+
+Just below the text area to add the ads code, you also see the box to add alternate ad code. This box will take alternate ads code to show in case visitor is using ad blocker. You can add affiliate banner as alternate ad to never miss a chance to show ads to your visitor. It is recommended to install image on your own server and use link cloaking to effectively use alternate ads. If you directly use affiliate banner with code given by the company, it may also be blocked by ad blocker.
+
+There are two ways you can use this plugin:
+
+Use these shortcodes within the post: 
+
+* [easy_ad_inject_1]
+* [easy_ad_inject_2]
+* [easy_ad_inject_3]
+* [easy_ad_inject_4]
+* [easy_ad_inject_5]
+
+
+use these functions to add ads in the theme.
+
+* &lt;?php echo put_wp_ad_1(); ?&gt;
+* &lt;?php echo put_wp_ad_2(); ?&gt;
+* &lt;?php echo put_wp_ad_3(); ?&gt;
+* &lt;?php echo put_wp_ad_4(); ?&gt;
+* &lt;?php echo put_wp_ad_5(); ?&gt;
+
+Read More: http://quickwebresources.com/?p=5566
+
+== Installation ==
+
+Unzip the plugin in the Wp-content/plugins folder or install direct from dashboard. 
+Activate plugin and then go to plugins settings page.
+Put adsense code here and then use shortcodes or functions to add adsense codes on your blog
+
+== Screenshots ==
+
+No screenshots
+
+== Changelog == 
+
+Alternate ads option to show alternate ads for users using ad block. Best way to promote affiliate banners to visitors using ad blocker
